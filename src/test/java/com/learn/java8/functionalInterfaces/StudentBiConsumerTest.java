@@ -14,22 +14,22 @@ import java.util.function.BiConsumer;
 public class StudentBiConsumerTest {
 
     private List<Student> students = null;
-    private BiConsumer<String, List<String>> studentBiConsumer = null;
+    private BiConsumer<String, List<String>> studentName_ActivitiesBiConsumer = null;
 
     @BeforeEach
     void setUp() {
         students = StudentBootstrap.getStudents();
-        studentBiConsumer = (name, activities) -> log.info(name + "    :   " + activities);
+        studentName_ActivitiesBiConsumer = (name, activities) -> log.info(name + "    :   " + activities);
     }
 
     @AfterEach
     void tearDown() {
         students = null;
-        studentBiConsumer = null;
+        studentName_ActivitiesBiConsumer = null;
     }
 
     @Test
     void printStudentActivities() {
-        students.forEach(s -> studentBiConsumer.accept(s.getName(), s.getActivities()));
+        students.forEach(s -> studentName_ActivitiesBiConsumer.accept(s.getName(), s.getActivities()));
     }
 }
