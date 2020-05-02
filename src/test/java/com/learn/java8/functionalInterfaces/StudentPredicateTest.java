@@ -25,7 +25,7 @@ public class StudentPredicateTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.getStudents();
+        students = StudentBootstrap.studentListSupplier.get();
         gradeGreaterThan3Predicate = s -> s.getGrade() > 3;
         gpaGreaterThan6Predicate = s -> s.getGpa() > 6;
         malePredicate = s -> s.getGender().equalsIgnoreCase("MALE");

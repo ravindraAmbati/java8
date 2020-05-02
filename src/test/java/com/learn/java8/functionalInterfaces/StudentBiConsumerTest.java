@@ -20,7 +20,7 @@ public class StudentBiConsumerTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.getStudents();
+        students = StudentBootstrap.studentListSupplier.get();
         studentName_ActivitiesBiConsumer = (name, activities) -> log.info(name + "    :   " + activities);
     }
 

@@ -6,6 +6,7 @@ import com.learn.java8.models.Student;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 public class StudentBootstrap {
 
@@ -25,4 +26,6 @@ public class StudentBootstrap {
         Student s12 = Student.builder().name("Less").gender("Female").grade(6).gpa(8.5d).activities(Arrays.asList("crafting", "aerobics", "cooking")).build();
         return Arrays.asList(s1, s2, s3, s4, s5, s6, s7, s8, s9, s0, s11, s12);
     }
+
+    public static Supplier<List<Student>> studentListSupplier = () -> getStudents();
 }

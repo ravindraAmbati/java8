@@ -22,7 +22,7 @@ public class StudentConsumerTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.getStudents();
+        students = StudentBootstrap.studentListSupplier.get();
         printStudentConsumer = (s) -> log.info(s.toString());
         uppercaseStudentNameConsumer = (s) -> log.info(s.getName().toUpperCase());
         printStudentActivitiesConsumer = (s) -> log.info(s.getActivities().toString());

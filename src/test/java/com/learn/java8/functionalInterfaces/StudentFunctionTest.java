@@ -32,7 +32,7 @@ public class StudentFunctionTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.getStudents();
+        students = StudentBootstrap.studentListSupplier.get();
         studentTitleFunction = s -> {
             if (MALE.equalsIgnoreCase(s.getGender())) {
                 return TITLE_MASTER.concat(s.getName());
