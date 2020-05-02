@@ -1,4 +1,4 @@
-package com.learn.java8.lambdasAndFunctionalInterfaces;
+package com.learn.java8.functionalInterfaces;
 
 import com.learn.java8.bootstrap.StudentBootstrap;
 import com.learn.java8.models.Student;

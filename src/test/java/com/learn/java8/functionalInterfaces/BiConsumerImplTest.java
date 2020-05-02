@@ -1,4 +1,4 @@
-package com.learn.java8.lambdasAndFunctionalInterfaces;
+package com.learn.java8.functionalInterfaces;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;

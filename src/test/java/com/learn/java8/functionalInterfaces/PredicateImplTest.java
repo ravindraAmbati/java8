@@ -1,4 +1,4 @@
-package com.learn.java8.lambdasAndFunctionalInterfaces;
+package com.learn.java8.functionalInterfaces;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
