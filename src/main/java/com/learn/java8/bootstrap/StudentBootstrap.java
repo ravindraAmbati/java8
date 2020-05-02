@@ -21,6 +21,8 @@ public class StudentBootstrap {
         Student s8 = Student.builder().name("Ipho").gender("Female").grade(4).gpa(8.0d).activities(Arrays.asList("cycling", "basketball", "running")).build();
         Student s9 = Student.builder().name("Mac").gender("Male").grade(5).gpa(7.5d).activities(Arrays.asList("soccer", "crafting", "cooking")).build();
         Student s0 = Student.builder().name("Cisco").gender("Female").grade(5).gpa(8.0d).activities(Arrays.asList("crafting", "aerobics", "cooking")).build();
-        return Arrays.asList(s1, s2, s3, s4, s5, s6, s7, s8, s9, s0);
+        Student s11 = Student.builder().name("More").gender("Male").grade(6).gpa(8.5d).activities(Arrays.asList("soccer", "crafting", "cooking")).build();
+        Student s12 = Student.builder().name("Less").gender("Female").grade(6).gpa(8.5d).activities(Arrays.asList("crafting", "aerobics", "cooking")).build();
+        return Arrays.asList(s1, s2, s3, s4, s5, s6, s7, s8, s9, s0, s11, s12);
     }
 }

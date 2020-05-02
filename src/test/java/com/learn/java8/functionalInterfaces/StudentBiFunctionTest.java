@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -24,9 +25,8 @@ public class StudentBiFunctionTest {
     private Predicate<Student> studentGradeGreaterThan2Predicate = null;
     private Predicate<Student> maleStudentPredicate = null;
     private Consumer<List<Student>> printStudentNameGenderGradeGpa = null;
-    private BiFunction<List<Student>, Predicate<Student>, List<Student>> studentBiFunction = null;
-
-    //todo BiFunc - studentsList, predicatesList, filteredStudentsList
+    private BiFunction<List<Student>, Predicate<Student>, List<Student>> studentBiFunction_singlePredicate = null;
+    private BiFunction<List<Student>, List<Predicate<Student>>, List<Student>> studentBiFunction_multiPredicate = null;
 
     @BeforeEach
     void setUp() {
@@ -42,10 +42,24 @@ public class StudentBiFunctionTest {
             log.info("Gpa:      " + s.getGpa());
             log.info("----------------------------------------");
         });
-        studentBiFunction = (students, predicate) -> {
+        studentBiFunction_singlePredicate = (students, predicate) -> {
             List<Student> filteredList = new ArrayList<>(students.size());
             students.forEach(s -> {
                 if (predicate.test(s)) {
+                    filteredList.add(s);
+                }
+            });
+            return filteredList;
+        };
+
+        studentBiFunction_multiPredicate = (students, predicates) -> {
+            List<Student> filteredList = new ArrayList<>(students.size());
+            students.forEach(s -> {
+                List<Boolean> flags = new ArrayList<>(predicates.size());
+                predicates.forEach(p ->
+                        flags.add(p.test(s))
+                );
+                if (!flags.contains(false)) {
                     filteredList.add(s);
                 }
             });
@@ -63,9 +77,14 @@ public class StudentBiFunctionTest {
     }
 
     @Test
-    void printStudent() {
-        printStudentNameGenderGradeGpa.accept(studentBiFunction.apply(students, studentGradeGreaterThan2Predicate));
-        printStudentNameGenderGradeGpa.accept(studentBiFunction.apply(students, studentGpaGreaterThan8Predicate));
-        printStudentNameGenderGradeGpa.accept(studentBiFunction.apply(students, maleStudentPredicate));
+    void printStudent_singlePredicate() {
+        printStudentNameGenderGradeGpa.accept(studentBiFunction_singlePredicate.apply(students, studentGradeGreaterThan2Predicate));
+        printStudentNameGenderGradeGpa.accept(studentBiFunction_singlePredicate.apply(students, studentGpaGreaterThan8Predicate));
+        printStudentNameGenderGradeGpa.accept(studentBiFunction_singlePredicate.apply(students, maleStudentPredicate));
+    }
+
+    @Test
+    void printStudent_multiPredicate() {
+        printStudentNameGenderGradeGpa.accept(studentBiFunction_multiPredicate.apply(students, Arrays.asList(maleStudentPredicate.negate(), studentGradeGreaterThan2Predicate, studentGpaGreaterThan8Predicate)));
     }
 }
