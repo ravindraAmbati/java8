@@ -10,3 +10,5 @@
         <li>BiFunction</li>
         <li>BiPredicate</li>        
     </ul> 
+    
+<h2>Consumer Chaining</h2>
