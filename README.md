@@ -3,9 +3,9 @@
 <h2>New Functional Interfaces in Java 8</h2> 
 <h4>java.util.function</h4>
     <ul>
-        <li>Consumer, BiConsumer - chaining</li>
-        <li>Function, BiFunction</li>
-        <li>Predicate, BiPredicate - chaining</li>
+        <li>Consumer, BiConsumer</li>
+        <li>Function, BiFunction, UnaryOperator, BinaryOperator</li>
+        <li>Predicate, BiPredicate</li>
         <li>Supplier</li>
     </ul> 
     
