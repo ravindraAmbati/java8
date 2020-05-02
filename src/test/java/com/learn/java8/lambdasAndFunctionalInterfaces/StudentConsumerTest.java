@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 @Slf4j
-public class StudentConsumer {
+public class StudentConsumerTest {
 
     List<Student> students = null;
     Consumer<Student> printStudentConsumer = null;

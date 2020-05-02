@@ -8,17 +8,17 @@ import org.junit.jupiter.api.Test;
 import java.util.Comparator;
 
 @Slf4j
-public class ComparatorImpl {
+public class ComparatorImplTest {
 
     private Comparator<Integer> integerComparator = null;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         integerComparator = null;
     }
 
     @AfterEach
-    void tearDown(){
+    void tearDown() {
         integerComparator = null;
     }
 

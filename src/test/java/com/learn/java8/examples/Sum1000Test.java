@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.stream.IntStream;
 
 @Slf4j
-public class Sum1000 {
+public class Sum1000Test {
 
     @Test
     void sum1000_Java7() {

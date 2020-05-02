@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class RemoveDuplicates {
+public class RemoveDuplicatesTest {
 
     private List<Integer> source = null;
     private List<Integer> target = null;

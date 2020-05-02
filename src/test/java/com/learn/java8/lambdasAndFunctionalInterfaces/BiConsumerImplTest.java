@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.function.BiConsumer;
 
 @Slf4j
-public class BiConsumerImpl {
+public class BiConsumerImplTest {
 
     private BiConsumer<Integer, Integer> additionBiConsumer = null;
     private BiConsumer<Integer, Integer> differenceBiConsumer = null;
