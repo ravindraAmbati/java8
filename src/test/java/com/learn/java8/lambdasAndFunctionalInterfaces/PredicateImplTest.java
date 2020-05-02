@@ -1,6 +1,5 @@
 package com.learn.java8.lambdasAndFunctionalInterfaces;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +9,7 @@ import java.util.function.Predicate;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Slf4j
+
 public class PredicateImplTest {
 
     private Predicate<Integer> evenNumberPredicate = null;
