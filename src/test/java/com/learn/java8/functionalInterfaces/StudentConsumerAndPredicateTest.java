@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -22,6 +23,8 @@ public class StudentConsumerAndPredicateTest {
     private Predicate<Student> gradeGreaterThan3Predicate = null;
     private Predicate<Student> gpaGreaterThan6Predicate = null;
     private Consumer<Student> studentConsumer = null;
+    private BiPredicate<Integer, Double> studentGradeGreaterThan2AndGpaGreaterThan4BiPredicate = null;
+    private Consumer<Student> studentConsumer1 = null;
 
     @BeforeEach
     void setUp() {
@@ -34,6 +37,12 @@ public class StudentConsumerAndPredicateTest {
                 printStudentName_ActivitiesBiConsumer.accept(s.getName(), s.getActivities());
             }
         };
+        studentGradeGreaterThan2AndGpaGreaterThan4BiPredicate = (i, j) -> i > 2 && j > 4.0d;
+        studentConsumer1 = s -> {
+            if (studentGradeGreaterThan2AndGpaGreaterThan4BiPredicate.test(s.getGrade(), s.getGpa())) {
+                printStudentName_ActivitiesBiConsumer.accept(s.getName(), s.getActivities());
+            }
+        };
     }
 
     @AfterEach
@@ -43,15 +52,27 @@ public class StudentConsumerAndPredicateTest {
         gradeGreaterThan3Predicate = null;
         gpaGreaterThan6Predicate = null;
         studentConsumer = null;
+        studentGradeGreaterThan2AndGpaGreaterThan4BiPredicate = null;
+        studentConsumer1 = null;
     }
 
     @Test
-    void setPrintStudentName_ActivitiesBiConsumer_gradeGreaterThan3_gpaGreaterThan6() {
+    void printStudentName_ActivitiesBiConsumer_gradeGreaterThan3_gpaGreaterThan6() {
         students.forEach(s -> studentConsumer.accept(s));
     }
 
     @Test
-    void setPrintStudentName_ActivitiesBiConsumer_gradeGreaterThan3_gpaGreaterThan6_NoAccept() {
+    void printStudentName_ActivitiesBiConsumer_gradeGreaterThan3_gpaGreaterThan6_NoAccept() {
         students.forEach(studentConsumer);
+    }
+
+    @Test
+    void printStudentName_ActivitiesBiConsumer_gradeGreaterThan2_gpaGreaterThan4() {
+        students.forEach(s -> studentConsumer1.accept(s));
+    }
+
+    @Test
+    void printStudentName_ActivitiesBiConsumer_gradeGreaterThan2_gpaGreaterThan4_NoAccept() {
+        students.forEach(studentConsumer1);
     }
 }
