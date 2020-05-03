@@ -20,7 +20,7 @@ public class StudentBiPredicateTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.studentListSupplier.get();
+        students = StudentBootstrap.studentListSupplierLambda.get();
         studentGradeGreaterThan3AndGpaGreaterThan6BiPredicate = (i, j) -> i > 3 && j > 6.0d;
     }
 

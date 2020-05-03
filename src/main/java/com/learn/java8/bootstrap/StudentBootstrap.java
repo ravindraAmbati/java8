@@ -27,5 +27,6 @@ public class StudentBootstrap {
         return Arrays.asList(s1, s2, s3, s4, s5, s6, s7, s8, s9, s0, s11, s12);
     }
 
-    public static Supplier<List<Student>> studentListSupplier = () -> getStudents();
+    public static Supplier<List<Student>> studentListSupplierLambda = () -> getStudents();
+    public static Supplier<List<Student>> studentListSupplierMethodReference = StudentBootstrap::getStudents;
 }

@@ -6,10 +6,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Getter
 @Setter
 @ToString
@@ -28,5 +30,9 @@ public class Student {
         this.grade = grade;
         this.gpa = gpa;
         this.activities = activities;
+    }
+
+    public static void printActivities(Student student) {
+        log.info(student.getActivities().toString());
     }
 }

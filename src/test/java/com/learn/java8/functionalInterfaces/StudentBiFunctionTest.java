@@ -30,7 +30,7 @@ public class StudentBiFunctionTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.studentListSupplier.get();
+        students = StudentBootstrap.studentListSupplierLambda.get();
         studentGpaGreaterThan8Predicate = s -> s.getGpa() > 8.0d;
         studentGradeGreaterThan2Predicate = s -> s.getGrade() > 2;
         maleStudentPredicate = s -> MALE.equalsIgnoreCase(s.getGender());

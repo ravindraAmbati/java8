@@ -27,7 +27,7 @@ public class StudentBinaryOperatorTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.studentListSupplier.get();
+        students = StudentBootstrap.studentListSupplierLambda.get();
         studentPredicate = (s1, s2) -> s1.getName().equalsIgnoreCase(s2.getName());
         printStudentConsumer = s -> log.info((null != s) ? s.toString() : "EMPTY");
         studentBinaryOperator = (s1, s2) -> studentPredicate.test(s1, s2) ? s1 : null;

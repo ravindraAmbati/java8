@@ -28,7 +28,7 @@ public class StudentConsumerAndPredicateTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.studentListSupplier.get();
+        students = StudentBootstrap.studentListSupplierLambda.get();
         printStudentName_ActivitiesBiConsumer = (name, activities) -> log.info(name + "    :   " + activities);
         gradeGreaterThan3Predicate = s -> s.getGrade() > 3;
         gpaGreaterThan6Predicate = s -> s.getGpa() > 6;

@@ -27,7 +27,7 @@ public class StudentUnaryOperatorTest {
 
     @BeforeEach
     void setUp() {
-        students = StudentBootstrap.studentListSupplier.get();
+        students = StudentBootstrap.studentListSupplierLambda.get();
         studentGenderPredicate = s -> MALE.equalsIgnoreCase(s.getGender());
         printStudentConsumer = s -> log.info(s.toString());
         studentTitleUnaryOperator = s -> {
