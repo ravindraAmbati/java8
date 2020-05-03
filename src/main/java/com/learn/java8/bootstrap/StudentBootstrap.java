@@ -29,4 +29,6 @@ public class StudentBootstrap {
 
     public static Supplier<List<Student>> studentListSupplierLambda = () -> getStudents();
     public static Supplier<List<Student>> studentListSupplierMethodReference = StudentBootstrap::getStudents;
+
+    public static Supplier<Student> studentSupplier = () -> Student.builder().name("Novo").gender("Male").grade(4).gpa(7.0d).activities(Arrays.asList("singing", "running", "swimming")).build();
 }
