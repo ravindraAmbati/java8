@@ -2,16 +2,14 @@ package com.learn.java8.models;
 
 /* @author ravin @date 02-05-2020 @time 15:56 */
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
+@NoArgsConstructor
 @Getter
 @Setter
 @ToString
