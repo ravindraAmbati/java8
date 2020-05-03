@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 @Slf4j
-public class ConsumerMethodReference {
+public class StudentMethodReferenceTest {
 
     private List<Student> students = null;
     private Consumer<Student> printLambda = null;

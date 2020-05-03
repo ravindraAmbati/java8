@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.util.function.Predicate;
 
 @Slf4j
-public class RefactorMethodReference {
+public class RefactorMethodReferenceTest {
 
     private Student s = null;
     private Predicate<Student> maleStudentPredicateLambda = null;
@@ -26,7 +26,7 @@ public class RefactorMethodReference {
     void setUp() {
         s = StudentBootstrap.studentSupplier.get();
         maleStudentPredicateLambda = s -> s.getGender().equalsIgnoreCase("MALE");
-        maleStudentPredicateMethodReference = RefactorMethodReference::isMaleStudent;
+        maleStudentPredicateMethodReference = RefactorMethodReferenceTest::isMaleStudent;
     }
 
     @AfterEach

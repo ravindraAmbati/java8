@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 @Slf4j
-public class ConsumerConstructorMethodReference {
+public class ConstructorMethodReferenceTest {
 
     private Consumer<Student> printStudent = null;
     private Supplier<Student> getNewStudentLambda = null;
