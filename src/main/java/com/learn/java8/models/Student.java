@@ -21,6 +21,15 @@ public class Student {
     private double gpa;
     private List<String> activities = new ArrayList<>();
 
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student(String name, int grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
     @Builder
     public Student(String name, String gender, int grade, double gpa, List<String> activities) {
         this.name = name;
