@@ -16,6 +16,8 @@ import java.util.function.Supplier;
 @Slf4j
 public class ConstructorMethodReferenceTest {
 
+    //        Student student  = Student::new; // Invalid - Compilation Error
+
     private Consumer<Student> printStudent = null;
     private Supplier<Student> studentSupplierLambda = null;
     private Supplier<Student> studentSupplierMethodReference = null;
