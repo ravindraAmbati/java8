@@ -30,6 +30,11 @@ public class Student {
         this.grade = grade;
     }
 
+    public Student(String name, double gpa) {
+        this.name = name;
+        this.gpa = gpa;
+    }
+
     @Builder
     public Student(String name, String gender, int grade, double gpa, List<String> activities) {
         this.name = name;

@@ -11,22 +11,28 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
 
 @Slf4j
 public class StudentReduceStreamsTest {
 
     private static final String MALE = "MALE";
     private List<Student> students = null;
+    private BinaryOperator<Student> maxBinaryOperator = null;
+    private BinaryOperator<Student> minBinaryOperator = null;
 
     @BeforeEach
     void setUp() {
         students = StudentBootstrap.getStudents();
-
+        maxBinaryOperator = (s1, s2) -> s1.getGpa() > s2.getGpa() ? s1 : s2;
+        minBinaryOperator = (s1, s2) -> s1.getGpa() > s2.getGpa() ? s2 : s1;
     }
 
     @AfterEach
     void tearDown() {
         students = null;
+        maxBinaryOperator = null;
+        minBinaryOperator = null;
     }
 
     @Test
@@ -156,5 +162,27 @@ public class StudentReduceStreamsTest {
                 .map(Student::getGpa)
                 .count();
         log.info(String.valueOf(total.orElse(0d) / count));
+    }
+
+    @Test
+    void printStudentMinGpaAndMaxGpa() {
+        log.info(students
+                .stream()
+                .reduce(new Student("", 0d), maxBinaryOperator)
+                .toString());
+        log.info(students
+                .stream()
+                .reduce(new Student("", 11d), minBinaryOperator)
+                .toString());
+        log.info(students
+                .stream()
+                .reduce(maxBinaryOperator)
+                .orElse(new Student())
+                .toString());
+        log.info(students
+                .stream()
+                .reduce(minBinaryOperator)
+                .orElse(new Student())
+                .toString());
     }
 }
