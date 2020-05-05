@@ -38,13 +38,13 @@
     
 <h4><b>operations</b> java.util.streams</h4>
     <ol>
-    <li>map</li>
-    <li>flatMap</li>
-    <li>peek</li>
-    <li>max</li>
-    <li>min</li>
-    <li>collect</li>
-    <li>reduce</li>
+    <li>map - convert one collections to another collection</li>
+    <li>flatMap - convert map into flatMap i.e., Stream&lt;List&lt;String&gt;&gt; into Stream&lt;String&gt; - remove List into single group</li>
+    <li>peek - returns the current Stream</li>
+    <li>max - return max object by Comparator</li>
+    <li>min - return max object by Comparator</li>
+    <li>collect - convert stream into collections</li>
+    <li>reduce - reduce the stream into single object by BinaryOperator</li>
     <li>allMatch</li>
     <li>anyMatch</li>
     <li>noneMatch</li>
@@ -52,9 +52,9 @@
     <li>findFirst</li>
     <li>limit</li>
     <li>skip</li>
-    <li>count</li>
-    <li>sorted</li>
-    <li>distinct</li>
-    <li>filter</li>
+    <li>count - return the objs count in current stream</li>
+    <li>sorted - return the objs in sorting order by Comparator in current stream</li>
+    <li>distinct - returns stream of distinct objects by Comparator</li>
+    <li>filter - filter stream by Predicate</li>
     </ol>
     
