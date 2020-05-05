@@ -36,3 +36,25 @@
         <li> it has been closed or stopped </li>
     </ol> 
     
+<h4><b>operations</b> java.util.streams</h4>
+    <ol>
+    <li>map</li>
+    <li>flatMap</li>
+    <li>peek</li>
+    <li>max</li>
+    <li>min</li>
+    <li>collect</li>
+    <li>reduce</li>
+    <li>allMatch</li>
+    <li>anyMatch</li>
+    <li>noneMatch</li>
+    <li>findAny</li>
+    <li>findFirst</li>
+    <li>limit</li>
+    <li>skip</li>
+    <li>count</li>
+    <li>sorted</li>
+    <li>distinct</li>
+    <li>filter</li>
+    </ol>
+    
