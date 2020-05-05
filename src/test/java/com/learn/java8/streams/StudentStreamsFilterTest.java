@@ -78,4 +78,16 @@ public class StudentStreamsFilterTest {
                         .toString()
         );
     }
+
+    @Test
+    void printFemaleGradeGreaterThan3GpaGreaterThan6Students() {
+        log.info(
+                students.stream()
+                        .filter(genderMale.negate())
+                        .filter(gradeGreaterThan3)
+                        .filter(gpaGreaterThan6)
+                        .collect(toList())
+                        .toString()
+        );
+    }
 }
