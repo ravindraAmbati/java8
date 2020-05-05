@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 
@@ -20,15 +21,21 @@ import static java.util.stream.Collectors.toList;
 public class StudentMapAndFlatMapStreamsTest {
 
     private List<Student> students = null;
+    private Predicate<Student> gradeGreaterThan3 = null;
+    private Predicate<Student> gpaGreaterThan6 = null;
 
     @BeforeEach
     void setUp() {
         students = StudentBootstrap.getStudents();
+        gradeGreaterThan3 = s -> s.getGrade() > 3;
+        gpaGreaterThan6 = s -> s.getGpa() > 6.0d;
     }
 
     @AfterEach
     void tearDown() {
         students = null;
+        gradeGreaterThan3 = null;
+        gpaGreaterThan6 = null;
     }
 
     @Test
@@ -93,11 +100,12 @@ public class StudentMapAndFlatMapStreamsTest {
 
     @Test
     void countStudentsGradeGreaterThan3AndGpaGreaterThan7_5() {
-        log.info(String.valueOf(students.stream()
-                .filter(s -> s.getGrade() > 3)
-                .filter(s -> s.getGpa() > 7.5)
-                .count())
-        );
+        Long count =
+                students.stream()
+                        .filter(gradeGreaterThan3)
+                        .filter(gpaGreaterThan6)
+                        .count();
+        log.info(String.valueOf(count));
     }
 
 }

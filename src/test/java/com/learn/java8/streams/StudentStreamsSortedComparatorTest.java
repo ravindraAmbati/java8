@@ -32,68 +32,84 @@ public class StudentStreamsSortedComparatorTest {
 
     @Test
     void printStudentsSortedByName() {
-        log.info(students.stream()
-                .sorted(Comparator.comparing(Student::getName))
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted(Comparator.comparing(Student::getName))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsSortedByNameAndGrade() {
-        log.info(students.stream()
-                .sorted(Comparator.comparing(Student::getName))
-                .sorted(Comparator.comparing(Student::getGrade))
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted(Comparator.comparing(Student::getName))
+                        .sorted(Comparator.comparing(Student::getGrade))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsSortedByGpaAscLambda() {
-        log.info(students.stream()
-                .sorted((o1, o2) -> {
-                    return Double.compare(o1.getGpa(), o2.getGpa());
-                })
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted((o1, o2) -> {
+                            return Double.compare(o1.getGpa(), o2.getGpa());
+                        })
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsSortedByGpaDescLambda() {
-        log.info(students.stream()
-                .sorted((o1, o2) -> {
-                    return Double.compare(o2.getGpa(), o1.getGpa());
-                })
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted((o1, o2) -> {
+                            return Double.compare(o2.getGpa(), o1.getGpa());
+                        })
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsSortedByGpaAscMethodReference() {
-        log.info(students.stream()
-                .sorted(Comparator.comparing(Student::getGpa))
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted(Comparator.comparing(Student::getGpa))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsSortedByGpaDescMethodReference() {
-        log.info(students.stream()
-                .sorted(Comparator.comparing(Student::getGpa).reversed())
-                .collect(Collectors.toList())
-                .toString());
+        log.info(
+                students.stream()
+                        .sorted(Comparator.comparing(Student::getGpa).reversed())
+                        .collect(Collectors.toList())
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsMaxGpa() {
-        log.info(students.stream()
-                .max(Comparator.comparingDouble(Student::getGpa))
-                .toString());
+        log.info(
+                students.stream()
+                        .max(Comparator.comparingDouble(Student::getGpa))
+                        .toString()
+        );
     }
 
     @Test
     void printStudentsMinGpa() {
-        log.info(students.stream()
-                .min(Comparator.comparingDouble(Student::getGpa))
-                .toString());
+        log.info(
+                students.stream()
+                        .min(Comparator.comparingDouble(Student::getGpa))
+                        .toString()
+        );
     }
 }

@@ -32,22 +32,22 @@ public class StudentStreamTest {
                 .stream()
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
         gradeGreaterThan3 = s -> s.getGrade() > 3;
-        studentNameAndActivitiesGradeGreaterThan3Map = students
-                .stream()
-                .filter(gradeGreaterThan3)
-                .collect(Collectors.toMap(Student::getName, Student::getActivities));
+        studentNameAndActivitiesGradeGreaterThan3Map =
+                students.stream()
+                        .filter(gradeGreaterThan3)
+                        .collect(Collectors.toMap(Student::getName, Student::getActivities));
         gpaGreaterThan6 = s -> s.getGpa() > 6.0d;
-        studentNameAndActivitiesGradeGreaterThan3GpaGreaterThan6Map = students
-                .stream()
-                .filter(gradeGreaterThan3)
-                .filter(gpaGreaterThan6)
-                .collect(Collectors.toMap(Student::getName, Student::getActivities));
-        studentDistinctActivities = students
-                .stream()
-                .map(Student::getActivities)
-                .flatMap(List::stream)
-                .distinct()
-                .collect(Collectors.toList());
+        studentNameAndActivitiesGradeGreaterThan3GpaGreaterThan6Map =
+                students.stream()
+                        .filter(gradeGreaterThan3)
+                        .filter(gpaGreaterThan6)
+                        .collect(Collectors.toMap(Student::getName, Student::getActivities));
+        studentDistinctActivities =
+                students.stream()
+                        .map(Student::getActivities)
+                        .flatMap(List::stream)
+                        .distinct()
+                        .collect(Collectors.toList());
 
     }
 

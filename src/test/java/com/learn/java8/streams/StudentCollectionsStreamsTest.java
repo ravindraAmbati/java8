@@ -31,8 +31,12 @@ public class StudentCollectionsStreamsTest {
         studentActivityListFunction = Student::getActivities;
         gradeGreaterThan3 = s -> s.getGrade() > 3;
         gpaGreaterThan6 = s -> s.getGpa() > 6.0d;
-        studentGradeGreaterThan3Stream = students.stream().filter(gradeGreaterThan3);
-        studentGpaGreaterThan7Stream = studentGradeGreaterThan3Stream.filter(gpaGreaterThan6);
+        studentGradeGreaterThan3Stream =
+                students.stream()
+                        .filter(gradeGreaterThan3);
+        studentGpaGreaterThan7Stream =
+                studentGradeGreaterThan3Stream
+                        .filter(gpaGreaterThan6);
 
     }
 

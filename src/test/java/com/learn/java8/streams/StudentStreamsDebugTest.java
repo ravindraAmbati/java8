@@ -28,43 +28,39 @@ public class StudentStreamsDebugTest {
     @BeforeEach
     void setUp() {
         students = StudentBootstrap.getStudents();
-        studentNameAndActivitiesMap = students
-                .stream()
-                .peek(s -> {
-                    log.info(s.toString());
-                    log.info("----");
-                })
-                .collect(Collectors.toMap(Student::getName, Student::getActivities));
+        studentNameAndActivitiesMap =
+                students.stream()
+                        .peek(s -> {
+                            log.info(s.toString());
+                            log.info("----");
+                        })
+                        .collect(Collectors.toMap(Student::getName, Student::getActivities));
         gradeGreaterThan3 = s -> s.getGrade() > 3;
-        studentNameAndActivitiesGradeGreaterThan3Map = students
-                .stream()
-                .peek(s -> {
-                    log.info(s.toString());
-                    log.info("----");
-                })
-                .filter(gradeGreaterThan3)
-
-                .peek(s -> {
-                    log.info(s.toString());
-                    log.info("----");
-                })
-                .collect(Collectors.toMap(Student::getName, Student::getActivities));
+        studentNameAndActivitiesGradeGreaterThan3Map =
+                students.stream()
+                        .peek(s -> {
+                            log.info(s.toString());
+                            log.info("----");
+                        })
+                        .filter(gradeGreaterThan3)
+                        .peek(s -> {
+                            log.info(s.toString());
+                            log.info("----");
+                        })
+                        .collect(Collectors.toMap(Student::getName, Student::getActivities));
         gpaGreaterThan6 = s -> s.getGpa() > 6.0d;
         studentNameAndActivitiesGradeGreaterThan3GpaGreaterThan6Map = students
                 .stream()
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .filter(gradeGreaterThan3)
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .filter(gpaGreaterThan6)
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
@@ -72,32 +68,26 @@ public class StudentStreamsDebugTest {
                 .collect(Collectors.toMap(Student::getName, Student::getActivities));
         studentDistinctActivities = students
                 .stream()
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .map(Student::getActivities)
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .flatMap(List::stream)
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .distinct()
-
                 .peek(s -> {
                     log.info(s.toString());
                     log.info("----");
                 })
                 .collect(Collectors.toList());
-
-
     }
 
     @AfterEach
