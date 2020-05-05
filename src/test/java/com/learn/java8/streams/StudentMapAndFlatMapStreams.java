@@ -17,7 +17,7 @@ import java.util.Map;
 import static java.util.stream.Collectors.toList;
 
 @Slf4j
-public class StudentMapStreams {
+public class StudentMapAndFlatMapStreams {
 
     private List<Student> students = null;
 
