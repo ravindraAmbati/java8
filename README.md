@@ -45,13 +45,13 @@
     <li>min - return max object by Comparator</li>
     <li>collect - convert stream into collections</li>
     <li>reduce - reduce the stream into single object by BinaryOperator</li>
-    <li>allMatch</li>
-    <li>anyMatch</li>
-    <li>noneMatch</li>
-    <li>findAny</li>
-    <li>findFirst</li>
-    <li>limit</li>
-    <li>skip</li>
+    <li>allMatch - all objects should match in given stream for given predicate</li>
+    <li>anyMatch - any objects should match in given stream for given predicate</li>
+    <li>noneMatch - none objects should match in given stream for given predicate</li>
+    <li>findAny - return first enumerated object, can also provide sorting</li>
+    <li>findFirst - return first object, can also provide sorting</li>
+    <li>limit - stream objects have been limited of given number </li>
+    <li>skip - rest of stream objects have been skipped of given number</li>
     <li>count - return the objs count in current stream</li>
     <li>sorted - return the objs in sorting order by Comparator in current stream</li>
     <li>distinct - returns stream of distinct objects by Comparator</li>
