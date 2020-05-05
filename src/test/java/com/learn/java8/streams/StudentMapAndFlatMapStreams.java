@@ -61,4 +61,43 @@ public class StudentMapAndFlatMapStreams {
                 .toString());
     }
 
+    @Test
+    void printActivitiesCount() {
+        log.info(String.valueOf(students.stream()
+                .map(Student::getActivities)
+                .flatMap(Collection::stream)
+                .distinct()
+                .count()));
+    }
+
+    @Test
+    void printSortedActivities() {
+        log.info(students.stream()
+                .map(Student::getActivities)
+                .flatMap(Collection::stream)
+                .distinct()
+                .sorted()
+                .collect(toList())
+                .toString());
+    }
+
+    @Test
+    void printGpas() {
+        log.info(students.stream()
+                .map(Student::getGpa)
+                .sorted()
+                .distinct()
+                .collect(toList())
+                .toString());
+    }
+
+    @Test
+    void countStudentsGradeGreaterThan3AndGpaGreaterThan7_5() {
+        log.info(String.valueOf(students.stream()
+                .filter(s -> s.getGrade() > 3)
+                .filter(s -> s.getGpa() > 7.5)
+                .count())
+        );
+    }
+
 }
