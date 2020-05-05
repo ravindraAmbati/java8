@@ -15,7 +15,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class StudentStreamDebugTest {
+public class StudentStreamsDebugTest {
 
     private List<Student> students = null;
     private Map<String, List<String>> studentNameAndActivitiesMap = null;

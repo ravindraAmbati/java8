@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-public class StudentStreamComparator {
+public class StudentStreamsSortedComparatorTest {
 
     private List<Student> students = null;
 
