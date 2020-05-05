@@ -57,4 +57,11 @@
     <li>distinct - returns stream of distinct objects by Comparator</li>
     <li>filter - filter stream by Predicate</li>
     </ol>
+<h4>short-circuiting</h4>
+<p>
+if(boolean1 && boolean2) // boolean2 will not be evaluated if boolean1 is false
+if(boolean1 || boolean2) // boolean2 will not be evaluated if boolean1 is true
+in Streams limit(), skip(), findAny(), findFirst(), anyMatch(), allMatch(), noneMatch() are short-circuiting operations
+these are not operated on each object in the stream
+</p> 
     
