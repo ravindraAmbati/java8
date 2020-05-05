@@ -14,7 +14,7 @@ import java.util.Optional;
 import java.util.function.BinaryOperator;
 
 @Slf4j
-public class StudentReduceStreamsTest {
+public class StudentStreamsReduceTest {
 
     private static final String MALE = "MALE";
     private List<Student> students = null;

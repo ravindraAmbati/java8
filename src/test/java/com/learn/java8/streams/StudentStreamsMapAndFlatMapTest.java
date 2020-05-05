@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 import static java.util.stream.Collectors.toList;
 
 @Slf4j
-public class StudentMapAndFlatMapStreamsTest {
+public class StudentStreamsMapAndFlatMapTest {
 
     private List<Student> students = null;
     private Predicate<Student> gradeGreaterThan3 = null;
