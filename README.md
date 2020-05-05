@@ -64,4 +64,12 @@ if(boolean1 || boolean2) // boolean2 will not be evaluated if boolean1 is true
 in Streams limit(), skip(), findAny(), findFirst(), anyMatch(), allMatch(), noneMatch() are short-circuiting operations
 these are not operated on each object in the stream
 </p> 
-    
+<h4>Stream static methods - create</h4>
+    <ol>
+        <li>Stream.of(var args of Objects)</li>
+        <li>Stream.iterate(seed,unaryOperator)</li>
+        <li>Stream.generate(supplier) </li>
+    </ol>
+
+
+   
