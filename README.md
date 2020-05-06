@@ -73,8 +73,8 @@ these are not operated on each object in the stream
 
 <h4>Numeric Streams</h4>
     <ol>
-        <li>IntStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics,boxed</li>
-        <li>LongStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics,boxed</li>
-        <li>DoubleStream - sum,count,min,max,average,summaryStatistics,boxed</li>
+        <li>IntStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics,boxed,mapToObj</li>
+        <li>LongStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics,boxed,mapToObj</li>
+        <li>DoubleStream - sum,count,min,max,average,summaryStatistics,boxed,mapToObj</li>
     </ol>
    
