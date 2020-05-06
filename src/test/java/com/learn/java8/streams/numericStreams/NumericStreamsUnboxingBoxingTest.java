@@ -88,4 +88,51 @@ public class NumericStreamsUnboxingBoxingTest {
                         .toString()
         );
     }
+
+    @Test
+    void printObj() {
+        log.info(
+                IntStream
+                        .rangeClosed(1, 10)
+                        .mapToObj(value -> Integer.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+        log.info(
+                LongStream
+                        .rangeClosed(1, 10)
+                        .mapToObj(value -> Long.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+        log.info(
+                LongStream
+                        .rangeClosed(1, 10)
+                        .asDoubleStream()
+                        .mapToObj(value -> Double.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+        log.info(
+                IntStream
+                        .rangeClosed(1, 10)
+                        .mapToObj(value -> Double.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+        log.info(
+                IntStream
+                        .rangeClosed(1, 10)
+                        .mapToObj(value -> Long.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+        log.info(
+                LongStream
+                        .rangeClosed(1, 10)
+                        .mapToObj(value -> Double.valueOf(value))
+                        .collect(Collectors.toList())
+                        .toString()
+        );
+    }
 }
