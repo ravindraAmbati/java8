@@ -71,5 +71,10 @@ these are not operated on each object in the stream
         <li>Stream.generate(supplier) </li>
     </ol>
 
-
+<h4>Numeric Streams</h4>
+    <ol>
+        <li>IntStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics</li>
+        <li>LongStream - range,rangeClosed,sum,count,min,max,average,asDoubleStream,summaryStatistics</li>
+        <li>DoubleStream - sum,count,min,max,average,summaryStatistics</li>
+    </ol>
    
