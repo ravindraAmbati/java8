@@ -82,4 +82,5 @@ these are not operated on each object in the stream
     <ul>
         <li>joining</li>
         <li>counting</li>
+        <li>mapping</li>
     </ul>
