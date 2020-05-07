@@ -78,3 +78,7 @@ these are not operated on each object in the stream
         <li>DoubleStream - sum,count,min,max,average,summaryStatistics,boxed,mapToObj</li>
     </ol>
    
+<h4>Terminal Operations</h4>
+    <ul>
+        <li>joining</li>
+    </ul>
