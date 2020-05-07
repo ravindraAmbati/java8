@@ -81,4 +81,5 @@ these are not operated on each object in the stream
 <h4>Terminal Operations</h4>
     <ul>
         <li>joining</li>
+        <li>counting</li>
     </ul>
