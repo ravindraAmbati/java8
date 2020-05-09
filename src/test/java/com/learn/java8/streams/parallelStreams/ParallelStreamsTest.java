@@ -64,7 +64,32 @@ public class ParallelStreamsTest {
                         .summaryStatistics()
                         .toString()
         );
+    }
 
+    @Test
+    void streamsBoxed() {
 
+        log.info(
+                String.valueOf(
+                        IntStream
+                                .rangeClosed(0, 100000)
+                                .boxed()
+                                .reduce(0, (a, b) -> a + b)
+                )
+        );
+    }
+
+    @Test
+    void parallelStreamsBoxed() {
+
+        log.info(
+                String.valueOf(
+                        IntStream
+                                .rangeClosed(0, 100000)
+                                .parallel()
+                                .boxed()
+                                .reduce(0, (a, b) -> a + b)
+                )
+        );
     }
 }
