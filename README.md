@@ -92,8 +92,20 @@ these are not operated on each object in the stream
     </ul>
     
 <h4>Parallel Streams</h4>
-<oL>
-<li>runs parallel depends on number of processors in the machine</li>
-<li>results vary on mutable objects</li>
-<li>performance is not better for operations on boxed objects</li>
-</oL>
+    <oL>
+        <li>runs parallel depends on number of processors in the machine</li>
+        <li>results vary on mutable objects</li>
+        <li>performance is not better for operations on boxed objects</li>
+    </oL>
+    
+<h4>Optionals</h4>
+    <ol>
+        <li>Of</li>
+        <li>OfNullable</li>
+        <li>Empty</li>
+        <li>get</li>
+        <li>orElse</li>
+        <li>orElseGet</li>
+        <li>isPresent</li>
+        <li>ifPresent</li>
+    </ol>
