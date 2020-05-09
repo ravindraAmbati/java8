@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -252,6 +253,102 @@ public class StreamsStudentGroupingByTest {
                         .collect(
                                 groupingBy(
                                         Student::getGrade,
+                                        averagingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderGpaOutstandingAverageHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        HashMap::new,
+                                        groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeGpaOutstandingAverageHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        HashMap::new,
+                                        groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderSummingGpaHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        HashMap::new,
+                                        summingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeSummingGpaHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        HashMap::new,
+                                        summingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderAverageGpaHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        HashMap::new,
+                                        averagingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeAverageGpaHashMapTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        HashMap::new,
                                         averagingDouble(Student::getGpa)
                                 )
                         )
