@@ -88,4 +88,5 @@ these are not operated on each object in the stream
         <li>summingInt, summingLong, summingDouble</li>
         <li>averageInt, averageLong, averageDouble</li>
         <li>groupingBy - classifier | classifier,downstream | classifier,supplier,downstream</li>
+        <li>partitionBy</li>
     </ul>
