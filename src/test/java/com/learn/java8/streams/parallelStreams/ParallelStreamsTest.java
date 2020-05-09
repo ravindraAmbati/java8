@@ -13,11 +13,13 @@ public class ParallelStreamsTest {
 
     private long startTime = 0L;
     private long endTime = 0L;
+    private Arithmetic arithmeticOperation = null;
 
     @BeforeEach
     void setUp() {
         log.info("Available Processors in this machine  " + Runtime.getRuntime().availableProcessors());
         startTime = System.currentTimeMillis();
+        arithmeticOperation = new Arithmetic();
     }
 
     @AfterEach
@@ -26,6 +28,7 @@ public class ParallelStreamsTest {
         log.info("total ms taken:" + (endTime - startTime));
         startTime = 0L;
         endTime = 0L;
+        arithmeticOperation = null;
     }
 
     @Test
@@ -89,6 +92,56 @@ public class ParallelStreamsTest {
                                 .parallel()
                                 .boxed()
                                 .reduce(0, (a, b) -> a + b)
+                )
+        );
+    }
+
+    @Test
+    void streamsArithmetic() {
+        IntStream
+                .rangeClosed(0, 100000)
+                .forEach(
+                        i -> arithmeticOperation.sum(i)
+                );
+        log.info(
+                String.valueOf(
+                        arithmeticOperation.getResult()
+                )
+        );
+        IntStream
+                .rangeClosed(1, 19)
+                .forEach(
+                        i -> arithmeticOperation.mul(i)
+                );
+        log.info(
+                String.valueOf(
+                        arithmeticOperation.getResult()
+                )
+        );
+    }
+
+    @Test
+    void parallelStreamsArithmetic() {
+        IntStream
+                .rangeClosed(0, 100000)
+                .parallel()
+                .forEach(
+                        i -> arithmeticOperation.sum(i)
+                );
+        log.info(
+                String.valueOf(
+                        arithmeticOperation.getResult()
+                )
+        );
+        IntStream
+                .rangeClosed(1, 19)
+                .parallel()
+                .forEach(
+                        i -> arithmeticOperation.mul(i)
+                );
+        log.info(
+                String.valueOf(
+                        arithmeticOperation.getResult()
                 )
         );
     }
