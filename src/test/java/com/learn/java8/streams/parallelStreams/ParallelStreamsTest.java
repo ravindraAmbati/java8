@@ -16,6 +16,7 @@ public class ParallelStreamsTest {
 
     @BeforeEach
     void setUp() {
+        log.info("Available Processors in this machine  " + Runtime.getRuntime().availableProcessors());
         startTime = System.currentTimeMillis();
     }
 
@@ -31,14 +32,17 @@ public class ParallelStreamsTest {
     void streams() {
         int i = 0;
         while (i < 100) {
-            log.info(
-                    IntStream
-                            .rangeClosed(0, 100000)
-                            .summaryStatistics()
-                            .toString()
-            );
+            IntStream
+                    .rangeClosed(0, 100000)
+                    .summaryStatistics();
             i++;
         }
+        log.info(
+                IntStream
+                        .rangeClosed(0, 100000)
+                        .summaryStatistics()
+                        .toString()
+        );
 
     }
 
@@ -46,15 +50,21 @@ public class ParallelStreamsTest {
     void parallelStreams() {
         int i = 0;
         while (i < 100) {
-            log.info(
-                    IntStream
-                            .rangeClosed(0, 100000)
-                            .parallel()
-                            .summaryStatistics()
-                            .toString()
-            );
+            IntStream
+                    .rangeClosed(0, 100000)
+                    .parallel()
+                    .summaryStatistics();
             i++;
         }
+
+        log.info(
+                IntStream
+                        .rangeClosed(0, 100000)
+                        .parallel()
+                        .summaryStatistics()
+                        .toString()
+        );
+
 
     }
 }
