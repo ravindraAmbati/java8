@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.mapping;
 import static java.util.stream.Collectors.toList;
 
 @Slf4j
-public class StreamsMappingTest {
+public class StreamsStudentMappingTest {
 
     private List<Student> students = null;
 

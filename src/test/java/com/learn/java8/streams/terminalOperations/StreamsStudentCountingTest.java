@@ -1,6 +1,6 @@
 package com.learn.java8.streams.terminalOperations;
 
-/* @author ravin @date 07-05-2020 @time 20:25 */
+/* @author ravin @date 07-05-2020 @time 20:36 */
 
 import com.learn.java8.bootstrap.StudentBootstrap;
 import com.learn.java8.models.Student;
@@ -9,12 +9,13 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
 import java.util.List;
 
-import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.counting;
 
 @Slf4j
-public class StreamsJoiningTest {
+public class StreamsStudentCountingTest {
 
     private List<Student> students = null;
 
@@ -34,20 +35,25 @@ public class StreamsJoiningTest {
         log.info(
                 students
                         .stream()
-                        .map(Student::getName)
-                        .collect(joining())
+                        .collect(counting())
+                        .toString()
         );
         log.info(
                 students
                         .stream()
+                        .filter(s -> s.getGpa() > 7.9d)
                         .map(Student::getName)
-                        .collect(joining("||"))
+                        .collect(counting())
+                        .toString()
         );
         log.info(
                 students
                         .stream()
-                        .map(Student::getName)
-                        .collect(joining(",", "[", "]"))
+                        .map(Student::getActivities)
+                        .flatMap(Collection::stream)
+                        .distinct()
+                        .collect(counting())
+                        .toString()
         );
 
     }
