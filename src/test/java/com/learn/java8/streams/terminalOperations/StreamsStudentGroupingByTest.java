@@ -11,7 +11,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
 
 @Slf4j
 public class StreamsStudentGroupingByTest {
@@ -23,35 +24,55 @@ public class StreamsStudentGroupingByTest {
     private Map<Integer, List<Student>> studentsMapGroupedByGrade = null;
     private Map<Double, List<Student>> studentsMapGroupedByGpa = null;
     private Map<String, List<Student>> studentsMapGroupedByGpaOutstandingAverage = null;
+    private Map<String, Map<String, List<Student>>> studentsMapTwoLevelGroupedByGenderGpaOutstandingAverage = null;
+    private Map<Integer, Map<String, List<Student>>> studentsMapTwoLevelGroupedByGradeGpaOutstandingAverage = null;
+    private Map<String, Double> studentsMapTwoLevelGroupedByGenderSummingGpa = null;
+    private Map<Integer, Double> studentsMapTwoLevelGroupedByGradeSummingGpa = null;
+    private Map<String, Double> studentsMapTwoLevelGroupedByGenderAverageGpa = null;
+    private Map<Integer, Double> studentsMapTwoLevelGroupedByGradeAverageGpa = null;
 
     @BeforeEach
     void setUp() {
+
         students = StudentBootstrap.getStudents();
         studentsMapGroupedByGender = null;
         studentsMapGroupedByGrade = null;
         studentsMapGroupedByGpa = null;
         studentsMapGroupedByGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGenderGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGradeGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGenderSummingGpa = null;
+        studentsMapTwoLevelGroupedByGradeSummingGpa = null;
+        studentsMapTwoLevelGroupedByGenderAverageGpa = null;
+        studentsMapTwoLevelGroupedByGradeAverageGpa = null;
     }
 
     @AfterEach
     void tearDown() {
+
         students = null;
         studentsMapGroupedByGender = null;
         studentsMapGroupedByGrade = null;
         studentsMapGroupedByGpa = null;
         studentsMapGroupedByGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGenderGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGradeGpaOutstandingAverage = null;
+        studentsMapTwoLevelGroupedByGenderSummingGpa = null;
+        studentsMapTwoLevelGroupedByGradeSummingGpa = null;
+        studentsMapTwoLevelGroupedByGenderAverageGpa = null;
+        studentsMapTwoLevelGroupedByGradeAverageGpa = null;
     }
 
     @Test
     void groupStudentsByGenderTest() {
         studentsMapGroupedByGender = students
                 .stream()
-                .collect(Collectors.groupingBy(Student::getGender)
+                .collect(groupingBy(Student::getGender)
                 );
         log.info(
                 students
                         .stream()
-                        .collect(Collectors.groupingBy(Student::getGender))
+                        .collect(groupingBy(Student::getGender))
                         .toString()
         );
     }
@@ -60,12 +81,12 @@ public class StreamsStudentGroupingByTest {
     void groupStudentsByGradeTest() {
         studentsMapGroupedByGrade = students
                 .stream()
-                .collect(Collectors.groupingBy(Student::getGrade)
+                .collect(groupingBy(Student::getGrade)
                 );
         log.info(
                 students
                         .stream()
-                        .collect(Collectors.groupingBy(Student::getGrade))
+                        .collect(groupingBy(Student::getGrade))
                         .toString()
         );
     }
@@ -74,12 +95,12 @@ public class StreamsStudentGroupingByTest {
     void groupStudentsByGpaTest() {
         studentsMapGroupedByGpa = students
                 .stream()
-                .collect(Collectors.groupingBy(Student::getGpa)
+                .collect(groupingBy(Student::getGpa)
                 );
         log.info(
                 students
                         .stream()
-                        .collect(Collectors.groupingBy(Student::getGpa))
+                        .collect(groupingBy(Student::getGpa))
                         .toString()
         );
     }
@@ -88,12 +109,152 @@ public class StreamsStudentGroupingByTest {
     void groupStudentsByGpaOutstandingAverageTest() {
         studentsMapGroupedByGpaOutstandingAverage = students
                 .stream()
-                .collect(Collectors.groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                .collect(groupingBy(s -> s.getGpa() > 7.4d ? O : A)
                 );
         log.info(
                 students
                         .stream()
-                        .collect(Collectors.groupingBy(s -> s.getGpa() > 7.4d ? O : A))
+                        .collect(groupingBy(s -> s.getGpa() > 7.4d ? O : A))
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderGpaOutstandingAverageTest() {
+        studentsMapTwoLevelGroupedByGenderGpaOutstandingAverage = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGender,
+                                groupingBy(
+                                        s -> s.getGpa() > 7.4d ? O : A)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeGpaOutstandingAverageTest() {
+        studentsMapTwoLevelGroupedByGradeGpaOutstandingAverage = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGrade,
+                                groupingBy(
+                                        s -> s.getGpa() > 7.4d ? O : A)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderSummingGpaTest() {
+        studentsMapTwoLevelGroupedByGenderSummingGpa = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGender,
+                                summingDouble(Student::getGpa)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        summingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeSummingGpaTest() {
+        studentsMapTwoLevelGroupedByGradeSummingGpa = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGrade,
+                                summingDouble(Student::getGpa)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        summingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderAverageGpaTest() {
+        studentsMapTwoLevelGroupedByGenderAverageGpa = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGender,
+                                averagingDouble(Student::getGpa)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        averagingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeAverageGpaTest() {
+        studentsMapTwoLevelGroupedByGradeAverageGpa = students
+                .stream()
+                .collect(
+                        groupingBy(
+                                Student::getGrade,
+                                averagingDouble(Student::getGpa)
+                        )
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        averagingDouble(Student::getGpa)
+                                )
+                        )
                         .toString()
         );
     }
