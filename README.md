@@ -83,4 +83,6 @@ these are not operated on each object in the stream
         <li>joining</li>
         <li>counting</li>
         <li>mapping</li>
+        <li>maxBy</li>
+        <li>minBy</li>
     </ul>
