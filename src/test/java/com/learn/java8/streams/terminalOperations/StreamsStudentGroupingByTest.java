@@ -9,9 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.util.stream.Collectors.*;
 
@@ -31,6 +29,7 @@ public class StreamsStudentGroupingByTest {
     private Map<Integer, Double> studentsMapTwoLevelGroupedByGradeSummingGpa = null;
     private Map<String, Double> studentsMapTwoLevelGroupedByGenderAverageGpa = null;
     private Map<Integer, Double> studentsMapTwoLevelGroupedByGradeAverageGpa = null;
+    private Comparator<Student> gpaComparator = null;
 
     @BeforeEach
     void setUp() {
@@ -46,6 +45,7 @@ public class StreamsStudentGroupingByTest {
         studentsMapTwoLevelGroupedByGradeSummingGpa = null;
         studentsMapTwoLevelGroupedByGenderAverageGpa = null;
         studentsMapTwoLevelGroupedByGradeAverageGpa = null;
+        gpaComparator = Comparator.comparing(Student::getGpa);
     }
 
     @AfterEach
@@ -62,6 +62,7 @@ public class StreamsStudentGroupingByTest {
         studentsMapTwoLevelGroupedByGradeSummingGpa = null;
         studentsMapTwoLevelGroupedByGenderAverageGpa = null;
         studentsMapTwoLevelGroupedByGradeAverageGpa = null;
+        gpaComparator = null;
     }
 
     @Test
@@ -350,6 +351,97 @@ public class StreamsStudentGroupingByTest {
                                         Student::getGrade,
                                         HashMap::new,
                                         averagingDouble(Student::getGpa)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeMaxByTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        maxBy(gpaComparator))
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderMaxByTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        maxBy(gpaComparator))
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGradeMinByTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGrade,
+                                        minBy(gpaComparator))
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderMinByTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        minBy(gpaComparator))
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderMinByGpaCollectThenTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        collectingAndThen(
+                                                minBy(gpaComparator),
+                                                Optional::get)
+                                )
+                        )
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsTwoLevelByGenderMaxByGpaCollectThenTest() {
+        log.info(
+                students
+                        .stream()
+                        .collect(
+                                groupingBy(
+                                        Student::getGender,
+                                        collectingAndThen(
+                                                maxBy(gpaComparator),
+                                                o -> o.orElseGet(Student::new)
+                                        )
                                 )
                         )
                         .toString()
