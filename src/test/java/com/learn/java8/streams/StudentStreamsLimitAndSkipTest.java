@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
@@ -109,7 +110,7 @@ public class StudentStreamsLimitAndSkipTest {
                 .sorted()
                 .skip(5)
                 .count();
-        log.info(String.valueOf(total / count));
+        log.info(Objects.toString(total / count));
     }
 
     @Test
@@ -190,7 +191,7 @@ public class StudentStreamsLimitAndSkipTest {
                 .sorted()
                 .skip(5)
                 .count();
-        log.info(String.valueOf(total.orElse(0d) / count));
+        log.info(Objects.toString(total.orElse(0d) / count));
     }
 
     @Test

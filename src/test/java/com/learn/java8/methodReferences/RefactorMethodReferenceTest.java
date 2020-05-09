@@ -9,6 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.function.Predicate;
 
 @Slf4j
@@ -38,9 +39,9 @@ public class RefactorMethodReferenceTest {
 
     @Test
     void isMaleStudent() {
-        log.info(String.valueOf(maleStudentPredicateLambda.test(s)));
-        log.info(String.valueOf(maleStudentPredicateMethodReference.test(s)));
-        log.info(String.valueOf(maleStudentPredicateLambda));
-        log.info(String.valueOf(maleStudentPredicateMethodReference));
+        log.info(Objects.toString(maleStudentPredicateLambda.test(s)));
+        log.info(Objects.toString(maleStudentPredicateMethodReference.test(s)));
+        log.info(Objects.toString(maleStudentPredicateLambda));
+        log.info(Objects.toString(maleStudentPredicateMethodReference));
     }
 }

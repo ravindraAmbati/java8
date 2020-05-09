@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 /* @author ravin @date 09-05-2020 @time 16:20 */
@@ -73,7 +74,7 @@ public class ParallelStreamsTest {
     void streamsBoxed() {
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(0, 100000)
                                 .boxed()
@@ -86,7 +87,7 @@ public class ParallelStreamsTest {
     void parallelStreamsBoxed() {
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(0, 100000)
                                 .parallel()
@@ -104,7 +105,7 @@ public class ParallelStreamsTest {
                         i -> arithmeticOperation.sum(i)
                 );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         arithmeticOperation.getResult()
                 )
         );
@@ -114,7 +115,7 @@ public class ParallelStreamsTest {
                         i -> arithmeticOperation.mul(i)
                 );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         arithmeticOperation.getResult()
                 )
         );
@@ -129,7 +130,7 @@ public class ParallelStreamsTest {
                         i -> arithmeticOperation.sum(i)
                 );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         arithmeticOperation.getResult()
                 )
         );
@@ -140,7 +141,7 @@ public class ParallelStreamsTest {
                         i -> arithmeticOperation.mul(i)
                 );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         arithmeticOperation.getResult()
                 )
         );

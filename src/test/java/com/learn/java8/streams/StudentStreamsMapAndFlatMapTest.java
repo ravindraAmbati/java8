@@ -9,10 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
@@ -70,7 +67,7 @@ public class StudentStreamsMapAndFlatMapTest {
 
     @Test
     void printActivitiesCount() {
-        log.info(String.valueOf(students.stream()
+        log.info(Objects.toString(students.stream()
                 .map(Student::getActivities)
                 .flatMap(Collection::stream)
                 .distinct()
@@ -105,7 +102,7 @@ public class StudentStreamsMapAndFlatMapTest {
                         .filter(gradeGreaterThan3)
                         .filter(gpaGreaterThan6)
                         .count();
-        log.info(String.valueOf(count));
+        log.info(Objects.toString(count));
     }
 
 }

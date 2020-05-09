@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 @Slf4j
@@ -36,7 +37,7 @@ public class StudentStreamsFindAnyFindFirst {
     @Test
     void printStudents() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .sorted(Comparator.comparingDouble(Student::getGpa))
                                 .findAny()
@@ -45,7 +46,7 @@ public class StudentStreamsFindAnyFindFirst {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .sorted(Comparator.comparingDouble(Student::getGpa).reversed())
                                 .findFirst()
@@ -53,7 +54,7 @@ public class StudentStreamsFindAnyFindFirst {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .sorted(Comparator.comparingDouble(Student::getGpa))
                                 .findFirst()
@@ -62,7 +63,7 @@ public class StudentStreamsFindAnyFindFirst {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .findAny()
                                 .orElse(null)
@@ -70,14 +71,14 @@ public class StudentStreamsFindAnyFindFirst {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .findFirst()
                                 .orElse(null)
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .findFirst()
                                 .orElse(null)

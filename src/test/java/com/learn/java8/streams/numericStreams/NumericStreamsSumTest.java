@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.IntStream;
 
 @Slf4j
@@ -29,19 +30,19 @@ public class NumericStreamsSumTest {
     @Test
     void print() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         integers.stream()
                                 .reduce(0, (a, b) -> a + b)
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         integers.stream()
                                 .reduce(0, Integer::sum)
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 10)
                                 .sum()

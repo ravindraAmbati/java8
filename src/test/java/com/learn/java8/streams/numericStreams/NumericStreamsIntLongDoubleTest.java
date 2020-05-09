@@ -5,6 +5,7 @@ package com.learn.java8.streams.numericStreams;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
@@ -14,35 +15,35 @@ public class NumericStreamsIntLongDoubleTest {
     @Test
     void printIntStream() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .count()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .count()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .sum()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .sum()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .min()
@@ -50,7 +51,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .min()
@@ -58,7 +59,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .max()
@@ -66,7 +67,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .max()
@@ -74,7 +75,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .average()
@@ -82,7 +83,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .average()
@@ -92,12 +93,12 @@ public class NumericStreamsIntLongDoubleTest {
 //        IntStream
 //                .rangeClosed(1,100)
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
 //        IntStream
 //                .range(1,100)
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
         log.info(
                 IntStream
@@ -116,35 +117,35 @@ public class NumericStreamsIntLongDoubleTest {
     @Test
     void printLongStream() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .count()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .count()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .sum()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .sum()
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .min()
@@ -152,7 +153,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .min()
@@ -160,7 +161,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .max()
@@ -168,7 +169,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .max()
@@ -176,7 +177,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .average()
@@ -184,7 +185,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .average()
@@ -194,12 +195,12 @@ public class NumericStreamsIntLongDoubleTest {
 //        LongStream
 //                .rangeClosed(1,100)
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
 //        LongStream
 //                .range(1,100)
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
         log.info(
                 LongStream
@@ -218,7 +219,7 @@ public class NumericStreamsIntLongDoubleTest {
     @Test
     void printFromLongToDoubleStream() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -226,7 +227,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -234,7 +235,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -242,7 +243,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -250,7 +251,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -259,7 +260,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -268,7 +269,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -277,7 +278,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -286,7 +287,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -295,7 +296,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         LongStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -307,13 +308,13 @@ public class NumericStreamsIntLongDoubleTest {
 //                .rangeClosed(1,100)
 //        .asDoubleStream()
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
 //        LongStream
 //                .range(1,100)
 //                .asDoubleStream()
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
         log.info(
                 LongStream
@@ -334,7 +335,7 @@ public class NumericStreamsIntLongDoubleTest {
     @Test
     void printFromIntToDoubleStream() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -342,7 +343,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -350,7 +351,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -358,7 +359,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -366,7 +367,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -375,7 +376,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -384,7 +385,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -393,7 +394,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -402,7 +403,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .rangeClosed(1, 100)
                                 .asDoubleStream()
@@ -411,7 +412,7 @@ public class NumericStreamsIntLongDoubleTest {
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         IntStream
                                 .range(1, 100)
                                 .asDoubleStream()
@@ -423,13 +424,13 @@ public class NumericStreamsIntLongDoubleTest {
 //                .rangeClosed(1,100)
 //        .asDoubleStream()
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
 //        IntStream
 //                .range(1,100)
 //                .asDoubleStream()
 //                .forEach(
-//                        i -> log.info(String.valueOf(i))
+//                        i -> log.info(Objects.toString(i))
 //                );
         log.info(
                 IntStream

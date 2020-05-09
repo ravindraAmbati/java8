@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -31,7 +32,7 @@ public class StreamsStudentSummingDoubleAverageDoubleTest {
     @Test
     void printStudentSumGpaTest() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students
                                 .stream()
                                 .collect(Collectors.summingDouble(Student::getGpa))
@@ -42,7 +43,7 @@ public class StreamsStudentSummingDoubleAverageDoubleTest {
     @Test
     void printStudentAvgGpaTest() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students
                                 .stream()
                                 .collect(Collectors.averagingDouble(Student::getGpa))

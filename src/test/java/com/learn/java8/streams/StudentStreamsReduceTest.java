@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
@@ -94,7 +95,7 @@ public class StudentStreamsReduceTest {
         long count = students.stream()
                 .map(Student::getGpa)
                 .count();
-        log.info(String.valueOf(total / count));
+        log.info(Objects.toString(total / count));
     }
 
     @Test
@@ -161,7 +162,7 @@ public class StudentStreamsReduceTest {
         Long count = students.stream()
                 .map(Student::getGpa)
                 .count();
-        log.info(String.valueOf(total.orElse(0d) / count));
+        log.info(Objects.toString(total.orElse(0d) / count));
     }
 
     @Test

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Predicate;
 
 @Slf4j
@@ -35,28 +36,28 @@ public class StudentStreamsAnyMatchAllMatchNoneMatchTest {
     @Test
     void printStudents() {
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .allMatch(studentPredicate)
                 )
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .anyMatch(studentPredicate)
                 )
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .noneMatch(studentPredicate)
                 )
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .limit(3)
                                 .allMatch(studentPredicate)
@@ -64,7 +65,7 @@ public class StudentStreamsAnyMatchAllMatchNoneMatchTest {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .limit(3)
                                 .anyMatch(studentPredicate)
@@ -72,14 +73,14 @@ public class StudentStreamsAnyMatchAllMatchNoneMatchTest {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .limit(3)
                                 .noneMatch(studentPredicate)
                 )
         );
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .skip(3)
                                 .allMatch(studentPredicate)
@@ -87,7 +88,7 @@ public class StudentStreamsAnyMatchAllMatchNoneMatchTest {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .skip(3)
                                 .anyMatch(studentPredicate)
@@ -95,7 +96,7 @@ public class StudentStreamsAnyMatchAllMatchNoneMatchTest {
         );
 
         log.info(
-                String.valueOf(
+                Objects.toString(
                         students.stream()
                                 .skip(3)
                                 .noneMatch(studentPredicate)

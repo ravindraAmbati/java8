@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -67,7 +68,7 @@ public class StreamsOfGenerateIterateTest {
                         Collectors.toList()
                 ).forEach(
                 i -> log.info(
-                        String.valueOf(i)
+                        Objects.toString(i)
                 )
         );
 
