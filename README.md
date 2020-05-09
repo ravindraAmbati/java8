@@ -85,4 +85,6 @@ these are not operated on each object in the stream
         <li>mapping</li>
         <li>maxBy</li>
         <li>minBy</li>
+        <li>summingInt, summingLong, summingDouble</li>
+        <li>averageInt, averageLong, averageDouble</li>
     </ul>
