@@ -1,4 +1,4 @@
-package com.learn.java8.streams;
+package com.learn.java8.streams.factoryMethodsStreams;
 
 /* @author ravin @date 05-05-2020 @time 20:29 */
 
