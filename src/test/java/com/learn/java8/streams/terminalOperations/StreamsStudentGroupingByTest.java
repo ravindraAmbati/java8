@@ -16,11 +16,13 @@ import java.util.stream.Collectors;
 @Slf4j
 public class StreamsStudentGroupingByTest {
 
+    private static final String O = "OUTSTANDING";
+    private static final String A = "AVERAGE";
     private List<Student> students = null;
     private Map<String, List<Student>> studentsMapGroupedByGender = null;
     private Map<Integer, List<Student>> studentsMapGroupedByGrade = null;
     private Map<Double, List<Student>> studentsMapGroupedByGpa = null;
-    private Map<String, List<Student>> studentsMapGroupedByActivity = null;
+    private Map<String, List<Student>> studentsMapGroupedByGpaOutstandingAverage = null;
 
     @BeforeEach
     void setUp() {
@@ -28,6 +30,7 @@ public class StreamsStudentGroupingByTest {
         studentsMapGroupedByGender = null;
         studentsMapGroupedByGrade = null;
         studentsMapGroupedByGpa = null;
+        studentsMapGroupedByGpaOutstandingAverage = null;
     }
 
     @AfterEach
@@ -36,6 +39,7 @@ public class StreamsStudentGroupingByTest {
         studentsMapGroupedByGender = null;
         studentsMapGroupedByGrade = null;
         studentsMapGroupedByGpa = null;
+        studentsMapGroupedByGpaOutstandingAverage = null;
     }
 
     @Test
@@ -76,6 +80,20 @@ public class StreamsStudentGroupingByTest {
                 students
                         .stream()
                         .collect(Collectors.groupingBy(Student::getGpa))
+                        .toString()
+        );
+    }
+
+    @Test
+    void groupStudentsByGpaOutstandingAverageTest() {
+        studentsMapGroupedByGpaOutstandingAverage = students
+                .stream()
+                .collect(Collectors.groupingBy(s -> s.getGpa() > 7.4d ? O : A)
+                );
+        log.info(
+                students
+                        .stream()
+                        .collect(Collectors.groupingBy(s -> s.getGpa() > 7.4d ? O : A))
                         .toString()
         );
     }
