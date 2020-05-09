@@ -90,3 +90,10 @@ these are not operated on each object in the stream
         <li>groupingBy - classifier | classifier,downstream | classifier,supplier,downstream</li>
         <li>partitionBy</li>
     </ul>
+    
+<h4>Parallel Streams</h4>
+<oL>
+<li>runs parallel depends on number of processors in the machine</li>
+<li>results vary on mutable objects</li>
+<li>performance is not better for operations on boxed objects</li>
+</oL>
