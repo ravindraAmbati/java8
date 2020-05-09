@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Slf4j
-public class OptionalOfEmptyOfNullable {
+public class OptionalOfEmptyOfNullableTest {
 
     private Optional<String> stringOptional = null;
 
