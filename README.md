@@ -106,6 +106,7 @@ these are not operated on each object in the stream
         <li>get</li>
         <li>orElse</li>
         <li>orElseGet</li>
+        <li>orElseThrow</li>
         <li>isPresent</li>
         <li>ifPresent</li>
     </ol>
