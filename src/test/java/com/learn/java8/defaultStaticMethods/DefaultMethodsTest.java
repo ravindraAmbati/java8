@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 public class DefaultMethodsTest {
 
     private List<String> names = null;
+    private List<String> namesNull = null;
 
     @BeforeEach
     void setUp() {
@@ -24,11 +26,13 @@ public class DefaultMethodsTest {
                 .stream()
                 .map(Student::getName)
                 .collect(Collectors.toList());
+        namesNull = Arrays.asList("Log", "Mike", "Tech", "Intel", null);
     }
 
     @AfterEach
     void tearDown() {
         names = null;
+        namesNull = null;
     }
 
     @Test
@@ -47,4 +51,19 @@ public class DefaultMethodsTest {
         log.info(names.toString());
     }
 
+    @Test
+    void sortNullsFirstTest() {
+        log.info(namesNull.toString());
+        namesNull.sort(Comparator.nullsFirst(Comparator.naturalOrder()));
+        log.info(namesNull.toString());
+        namesNull.sort(Comparator.nullsFirst(Comparator.reverseOrder()));
+    }
+
+    @Test
+    void sortNullsLastTest() {
+        log.info(namesNull.toString());
+        namesNull.sort(Comparator.nullsLast(Comparator.naturalOrder()));
+        log.info(namesNull.toString());
+        namesNull.sort(Comparator.nullsLast(Comparator.reverseOrder()));
+    }
 }
