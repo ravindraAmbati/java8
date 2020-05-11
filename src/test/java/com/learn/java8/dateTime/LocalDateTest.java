@@ -151,5 +151,35 @@ public class LocalDateTest {
                 "Local Date modify: with ChronoField.DAY_OF_MONTH    " +
                         localDate.with(ChronoField.DAY_OF_MONTH, 30)
         );
+
+        log.info(
+                "Local Date modify: isLeapYear    " +
+                        localDate.isLeapYear()
+        );
+
+        log.info(
+                "Local Date modify: isBefore    " +
+                        localDate.isBefore(LocalDate.now())
+        );
+
+        log.info(
+                "Local Date modify: isAfter    " +
+                        localDate.isAfter(LocalDate.now())
+        );
+
+        log.info(
+                "Local Date modify: isEqual    " +
+                        localDate.isEqual(LocalDate.now())
+        );
+
+        log.info(
+                "Local Date modify: isSupported ChronoUnit.HOURS    " +
+                        localDate.isSupported(ChronoUnit.HOURS)
+        );
+
+        log.info(
+                "Local Date modify: isSupported ChronoUnit.DAYS   " +
+                        localDate.isSupported(ChronoUnit.DAYS)
+        );
     }
 }
