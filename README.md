@@ -118,3 +118,10 @@ these are not operated on each object in the stream
         <li>isPresent</li>
         <li>ifPresent</li>
     </ol>
+    
+<h4>java.time</h4>
+    <ol>
+        <li>LocalDate</li>
+        <li>LocalTime</li>
+        <li>LocalDateTime</li>
+    </ol>
