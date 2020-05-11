@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 
 /* @author ravin @date 11-05-2020 @time 08:24 */
@@ -119,6 +120,11 @@ public class LocalDateTest {
         log.info(
                 "Local Date modify: minusYears    " +
                         localDate.minusYears(30)
+        );
+
+        log.info(
+                "Local Date modify: minus  ChronoUnit.CENTURIES  " +
+                        localDate.minus(1, ChronoUnit.CENTURIES)
         );
 
         log.info(
