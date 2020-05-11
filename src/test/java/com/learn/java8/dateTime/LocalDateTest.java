@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalAdjusters;
 
 /* @author ravin @date 11-05-2020 @time 08:24 */
 @Slf4j
@@ -78,6 +79,71 @@ public class LocalDateTest {
         log.info(
                 "Local Date of getLong YEAR_OF_ERA: " +
                         localDate.getLong(ChronoField.YEAR_OF_ERA)
+        );
+
+        log.info(
+                "Local Date modify: plusDays    " +
+                        localDate.plusDays(10000)
+        );
+
+        log.info(
+                "Local Date modify: plusMonths    " +
+                        localDate.plusMonths(1000)
+        );
+
+        log.info(
+                "Local Date modify: plusWeeks    " +
+                        localDate.plusWeeks(1500)
+        );
+
+        log.info(
+                "Local Date modify: plusYears    " +
+                        localDate.plusYears(30)
+        );
+
+        log.info(
+                "Local Date modify: minusDays    " +
+                        localDate.minusDays(10000)
+        );
+
+        log.info(
+                "Local Date modify: minusMonths    " +
+                        localDate.minusMonths(1000)
+        );
+
+        log.info(
+                "Local Date modify: minusMonths    " +
+                        localDate.minusWeeks(1500)
+        );
+
+        log.info(
+                "Local Date modify: minusYears    " +
+                        localDate.minusYears(30)
+        );
+
+        log.info(
+                "Local Date modify: withDayOfMonth    " +
+                        localDate.withDayOfMonth(9)
+        );
+
+        log.info(
+                "Local Date modify: withDayOfYear    " +
+                        localDate.withDayOfYear(30)
+        );
+
+        log.info(
+                "Local Date modify: withMonth    " +
+                        localDate.withMonth(8)
+        );
+
+        log.info(
+                "Local Date modify: with TemporalAdjusters.lastDayOfYear()    " +
+                        localDate.with(TemporalAdjusters.lastDayOfYear())
+        );
+
+        log.info(
+                "Local Date modify: with ChronoField.DAY_OF_MONTH    " +
+                        localDate.with(ChronoField.DAY_OF_MONTH, 30)
         );
     }
 }
