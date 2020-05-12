@@ -44,9 +44,9 @@ public class LocalDateParseFormatDateTimeFormatterTest {
     void formatter() {
         LocalDate localDate = LocalDate.now();
         log.info("DateTimeFormatter.ISO_DATE    " + localDate.format(DateTimeFormatter.ISO_DATE));
-        log.info("DateTimeFormatter.ISO_DATE    " + localDate.format(DateTimeFormatter.BASIC_ISO_DATE));
-        log.info("DateTimeFormatter.ISO_DATE    " + localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-        log.info("DateTimeFormatter.ISO_DATE    " + localDate.format(DateTimeFormatter.ofPattern("yyyy||MM||dd")));
+        log.info("DateTimeFormatter.BASIC_ISO_DATE    " + localDate.format(DateTimeFormatter.BASIC_ISO_DATE));
+        log.info("DateTimeFormatter.yyyy-MM-dd    " + localDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        log.info("DateTimeFormatter.yyyy||MM||dd    " + localDate.format(DateTimeFormatter.ofPattern("yyyy||MM||dd")));
         ;
     }
 }
