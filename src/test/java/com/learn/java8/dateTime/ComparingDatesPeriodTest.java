@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /* @author ravin @date 12-05-2020 @time 08:15 */
 @Slf4j
-public class PeriodTest {
+public class ComparingDatesPeriodTest {
 
     @Test
     void test() {

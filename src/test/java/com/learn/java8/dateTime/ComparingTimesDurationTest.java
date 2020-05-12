@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 
 /* @author ravin @date 12-05-2020 @time 08:33 */
 @Slf4j
-public class DurationTest {
+public class ComparingTimesDurationTest {
 
     @Test
     void test() {
