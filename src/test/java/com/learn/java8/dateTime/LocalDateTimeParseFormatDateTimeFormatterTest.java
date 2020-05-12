@@ -36,8 +36,14 @@ public class LocalDateTimeParseFormatDateTimeFormatterTest {
         String dateTime4 = "2020|05|12 21||05||16";
         log.info("dateTime  " + dateTime4);
         DateTimeFormatter dateTimeFormatter1 = DateTimeFormatter.ofPattern("yyyy|MM|dd HH||mm||ss");
-        LocalDateTime localTime4 = LocalDateTime.parse(dateTime4, dateTimeFormatter1);
-        log.info("localTime " + localTime4);
+        LocalDateTime localDateTime4 = LocalDateTime.parse(dateTime4, dateTimeFormatter1);
+        log.info("localTime " + localDateTime4);
+
+        String dateTime5 = "2020|05|12T21||05||16";
+        log.info("dateTime  " + dateTime5);
+        DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofPattern("yyyy|MM|dd'T'HH||mm||ss");
+        LocalDateTime localDateTime5 = LocalDateTime.parse(dateTime5, dateTimeFormatter2);
+        log.info("localTime " + localDateTime5);
     }
 
     @Test
