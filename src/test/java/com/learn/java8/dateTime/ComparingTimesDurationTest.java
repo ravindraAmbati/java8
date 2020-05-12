@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 
 /* @author ravin @date 12-05-2020 @time 08:33 */
 @Slf4j
@@ -41,6 +42,21 @@ public class ComparingTimesDurationTest {
         );
         log.info(
                 Duration.ofSeconds(123).toString()
+        );
+        log.info(
+                Objects.toString(Duration.ofDays(10).toHours())
+        );
+        log.info(
+                Objects.toString(Duration.ofMinutes(135).toNanos())
+        );
+        log.info(
+                Objects.toString(Duration.ofHours(25).toMillis())
+        );
+        log.info(
+                Objects.toString(Duration.ofMillis(10000).toMinutes())
+        );
+        log.info(
+                Objects.toString(Duration.ofMinutes(135).toNanos())
         );
     }
 }
