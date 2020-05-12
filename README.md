@@ -126,4 +126,5 @@ these are not operated on each object in the stream
         <li>LocalDateTime</li>
         <li>Period - ComparingDates</li>
         <li>Duration - ComparingTimes</li>
+        <li>Instant - DateTime From EPOCH 01-01-1970</li>
     </ol>
