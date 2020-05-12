@@ -128,4 +128,5 @@ these are not operated on each object in the stream
         <li>Duration - ComparingTimes</li>
         <li>Instant - DateTime From EPOCH 01-01-1970</li>
         <li>ZonedDateTime | ZoneId | ZoneOffSet</li>
+        <li>DateTimeFormatter - parse String to LocalDate|LocalTime|LocalDateTime and format LocalDate|LocalTime|LocalDateTime to String</li>
     </ol>
