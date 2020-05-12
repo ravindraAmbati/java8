@@ -124,4 +124,6 @@ these are not operated on each object in the stream
         <li>LocalDate</li>
         <li>LocalTime</li>
         <li>LocalDateTime</li>
+        <li>Period - ComparingDates</li>
+        <li>Duration - ComparingTimes</li>
     </ol>
