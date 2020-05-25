@@ -130,3 +130,5 @@ these are not operated on each object in the stream
         <li>ZonedDateTime | ZoneId | ZoneOffSet</li>
         <li>DateTimeFormatter - parse String to LocalDate|LocalTime|LocalDateTime and format LocalDate|LocalTime|LocalDateTime to String</li>
     </ol>
+    
+<h4>End-of-the-file</h4>
