@@ -1,18 +1,19 @@
-package com.learn.threading;
+package com.learn.threading.util;
 
-public class Incrementer implements Runnable{
+public class Incrementer implements Runnable {
 
     public static int i;
-    public static void increment(){
+
+    public static void increment() {
         i++;
     }
 
     @Override
     public void run() {
-        for (int j = 0; j <10; j++) {
+        for (int j = 0; j < 10; j++) {
             increment();
         }
-        System.out.println("current value"+i);
+        System.out.println("current value" + i);
     }
 
 }
